@@ -26,6 +26,10 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
+	_, err = db.Exec("SET default_storage_engine=MEMORY")
+	if err != nil {
+		panic(err)
+	}
 }
 
 func before(t *testing.T) {
